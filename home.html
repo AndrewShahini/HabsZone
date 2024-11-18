@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabsZone - Home</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<header>
+    <div class="logo-title">
+        <img class="logo" src="assets/images/HabsLogo.jpg" alt="Habs Logo">
+            <p id="title">HabsZone</p>
+    </div>
+    <nav>
+        <ul id="menu">
+            <li class="list"><a href="home.html">Home</a></li>
+            <li class="list"><a href="roster.html">Roster</a></li>
+            <li class="list"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="banner">
+        <img src="assets/images/banner.jpeg" alt="Banner">
+    </div>
+
+    <section class="recent-news">
+        <h3>Recent News</h3>
+        <div class="news-articles">
+            <div class="article"><a href="https://thehockeynews.com/nhl/montreal-canadiens/latest-news/canadiens-ready-for-big-test">Article 1</a></div>
+            <div class="article"><a href="https://www.sportsnet.ca/nhl/article/canadiens-slump-busting-win-over-sabres-delivered-by-teams-top-players/">Article 2</a></div>
+            <div class="article"><a href="https://www.habseyesontheprize.com/canadiens-wild-2024-11-14-game-preview-start-time-tale-of-the-tape-and-how-to-watch-tv-listings/">Article 3</a></div>
+            <div class="article"><a href="https://www.habseyesontheprize.com/canadiens-wild-2024-11-14-game-preview-start-time-tale-of-the-tape-and-how-to-watch-tv-listings/">Article 4</a></div>
+        </div>
+        <div class="related-image">
+            <img src="assets/images/bench.jpg" alt="bench">
+        </div>
+    </section>
+
+  
+    <section class="standings">
+        <h3>Standings</h3>
+        <div id="standings-container">
+            <!-- standings will be dynamically populated here from js, dom and  jquery -->
+        </div>
+    </section>
+
+    <section class="recent-highlights">
+        <h3>Recent Highlights</h3>
+        <iframe src="https://www.youtube.com/embed/Yac2s0dRFdo" 
+            title="Recent Highlights" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    <!-- upcoming Schedule Section -->
+    <section class="schedule">
+        <h3>Upcoming Schedule</h3>
+        <div class="calendar">
+        <!-- calendar here -->
+        </div>
+    </section>
+
+    <!-- FanZone Section -->
+    <section class="fan-zone">
+        <h3>The FanZone</h3>
+        <p>We encourage our fans to discuss and debate about our favourite team!</p>
+        <div id="comments-section">
+        <!-- user comments will go here -->
+        </div>
+        <textarea id="comment-input" placeholder="Write a message..."></textarea>
+        <button>Post Comment</button>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="footer-col">
+                <h3 id="h3">HabsZone</h3>
+                <p>&copy; 2024 HabsZone. All Rights Reserved.</p>
+                <div class="socials">
+                    <a href="https://www.facebook.com/canadiensmtl" target="_blank"><img src="assets/images/Facebook.png" alt="Facebook"></a>
+                    <a href="https://x.com/canadiensmtl" target="_blank"><img src="assets/images/Twitter.png" alt="X"></a>
+                    <a href="https://www.instagram.com/canadiensmtl/"><img src="assets/images/Instagram.png" alt="Instagram"></a>
+                    <a href="https://www.youtube.com/@canadiensmtl"><img src="assets/images/youtube.png" alt="Youtube" id="yt"></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <ul id="menu">
+                <li class="list">About Us</li>
+                <li class="list">Terms & Condition</li>
+                <li class="list">Privacy Policy</li>
+                <li class="list"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+</html>
