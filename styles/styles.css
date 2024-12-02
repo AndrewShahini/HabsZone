@@ -107,10 +107,8 @@ Recent News
   margin-bottom: 15px;
 }
 
-#standings-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.division {
+  margin: 10px;
 }
 
 .standing-division {
@@ -130,14 +128,15 @@ Recent News
   padding: 5px 0;
 }
 
-.team-logo {
-  width: 25px;
-  height: 25px;
+.team img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
 }
 
-.team-abbreviation {
-  font-size: 16px;
-  font-weight: bold;
+
+#standingsDialog {
+  display: none;
 }
 
 /* Recent Highlights */
@@ -212,7 +211,6 @@ button:hover {
 }
 
 /*Roster*/
-
 
 div:empty{
   background-color: white;
@@ -298,7 +296,7 @@ h3 {
 
 .player-photo {
   width: 220px;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
   border: 2px solid black;
 }
@@ -315,7 +313,7 @@ h3 {
   text-align: center;
   font-size: 14px;
   -webkit-text-stroke: 1px black;
-  /*background-color: gray;*/
+  background-color: rgba(128, 128, 128, 0.8);
 }
 
 /*Contact Page*/

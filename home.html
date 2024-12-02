@@ -6,6 +6,7 @@
     <title>HabsZone - Home</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 <header>
     <div class="logo-title">
@@ -41,9 +42,13 @@
   
     <section class="standings">
         <h3>Standings</h3>
-        <div id="standings-container">
-            <!-- standings will be dynamically populated here from js, dom and  jquery -->
+        <div id="divisions">
+            <button data-division="Atlantic">Atlantic Division</button>
+            <button data-division="Metropolitan">Metropolitan Division</button>
+            <button data-division="Central">Central Division</button>
+            <button data-division="Pacific">Pacific Division</button>
         </div>
+        <div id="standingsDialog" title="Standings"></div>
     </section>
 
     <section class="recent-highlights">
@@ -95,6 +100,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="script/script.js"></script>
 </body>
 </html>
