@@ -1,62 +1,5 @@
-/*
 $(document).ready(function () {
 
-    // Function to fetch and display standings
-    async function fetchStandings(division) {
-        try {
-            const response = await fetch(`standings.json`);
-            if (!response.ok) {
-                throw new Error("Failed to fetch standings");
-            }
-            const data = await response.json();
-            const logo = data.teamLogo;
-            const abbreviation = data.teamAbbrev.default;
-            const position = data.divisionSequence;
-            const wins = data.wins;
-            const loses = data.loses;
-            const otlosses = data.otLosses
-            const points = data.points;
-
-    
-            if (!data.records || !Array.isArray(data.records)) {
-                throw new Error("Invalid data format: 'records' is missing or not an array");
-            }
-    
-            let teams = [];
-            const record = data.records.find(record => record.divisionName == division);
-            if (record) {
-                teams = record.teamRecords;
-            } else {
-                throw new Error(`Division '${division}' not found in the data`);
-            }
-            
-    
-            // Build the standings table
-            const standingsHtml = teams.map((team, index) => {
-                const { team: teamInfo, leagueRank, wins, losses, ot } = team;
-               return `
-                    <div class="team">
-                        <img src="${logo}" alt="${name}">
-                        <div>
-                            <strong>${leagueRank}. ${abbreviation}</strong><br>
-                            Wins: ${wins}, Losses: ${losses}, OT: ${ot}
-                        </div>
-                    </div>`;
-            }).join("");
-    
-            // Populate and open the dialog
-            $("#standingsDialog").html(standingsHtml).dialog("open");
-        } catch (error) {
-            console.error("Error fetching standings:", error);
-            alert("Failed to fetch standings. Please check the console for details.");
-        }
-    }
-});
-*/
-
-$(document).ready(function () {
-
-    // Function to fetch and display standings
     async function fetchStandings(division) {
         try {
             const response = await fetch(`standings.json`);
@@ -65,22 +8,20 @@ $(document).ready(function () {
             }
             const data = await response.json();
 
-            console.log(data); // Log the full data to inspect the structure
+            console.log(data);
 
             let teams = [];
 
-            // Loop through the standings to find the division or entire league
             if (data && data.standings) {
                 teams = data.standings.filter(team => team.divisionName === division);
             } else {
                 throw new Error("No standings data found");
             }
 
-            // Build the standings table
             const standingsHtml = teams.map((team, index) => {
                 const { teamLogo, teamAbbrev, divisionSequence, wins, losses, otLosses, points, teamName } = team;
-                const logo = teamLogo || "default-logo.png"; // Use default logo if no logo is available
-                const position = divisionSequence || "N/A"; // Default to N/A if no position is available
+                const logo = teamLogo || "default-logo.png"; 
+                const position = divisionSequence || "N/A";
 
                 return `
                     <div class="team">
@@ -92,7 +33,6 @@ $(document).ready(function () {
                     </div>`;
             }).join("");
 
-            // Populate and open the dialog
             $("#standingsDialog").html(standingsHtml).dialog("open");
 
         } catch (error) {
@@ -101,17 +41,86 @@ $(document).ready(function () {
         }
     }
 
-    // Attach click event listeners to division buttons
     $("#divisions button").on("click", function () {
         const division = $(this).data("division");
         fetchStandings(division);
     });
 
-    // Initialize jQuery UI dialog
     $("#standingsDialog").dialog({
         autoOpen: false,
-        width: 600,
+        width: 800,
         modal: true
     });
+});
 
+function submitForm(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userEmail", email);
+
+    alert("Your question has been successfully submitted!");
+
+    document.getElementById("contact-form").reset();
+}
+
+
+$(document).ready(function () {
+    // Sample data to simulate a backend
+    var comments = [];
+
+    // Function to display comments
+    function displayComments() {
+        const commentSection = $('#comments-section');
+        commentSection.empty(); // Clear existing comments
+
+        comments.forEach(function (comment) {
+            const commentHtml = `
+                <div class="comment">
+                    <strong>${comment.username}</strong>: ${comment.message}
+                </div>
+            `;
+            commentSection.append(commentHtml);
+        });
+    }
+
+    // Event listener for submitting the form
+    $('#comment-form').on('submit', function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const username = $('#username').val().trim();
+        const message = $('#comment-input').val().trim();
+
+        if (username && message) {
+            // Simulate AJAX request (you can replace it with actual AJAX to backend)
+            setTimeout(function () {
+                // Add comment to the comments array
+                comments.push({ username: username, message: message });
+
+                // Clear the input fields
+                $('#username').val('');
+                $('#comment-input').val('');
+
+                // Display updated comments
+                displayComments();
+
+                // Optional: alert user that comment was posted
+                alert('Your comment has been posted!');
+            }, 500); // Simulate server response time (500ms)
+        } else {
+            alert('Please enter both username and message.');
+        }
+    });
+
+    // Initial call to display any existing comments
+    displayComments();
 });

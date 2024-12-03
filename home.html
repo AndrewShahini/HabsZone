@@ -29,16 +29,17 @@
     <section class="recent-news">
         <h3>Recent News</h3>
         <div class="news-articles">
-            <div class="article"><a href="https://thehockeynews.com/nhl/montreal-canadiens/latest-news/canadiens-ready-for-big-test">Article 1</a></div>
-            <div class="article"><a href="https://www.sportsnet.ca/nhl/article/canadiens-slump-busting-win-over-sabres-delivered-by-teams-top-players/">Article 2</a></div>
-            <div class="article"><a href="https://www.habseyesontheprize.com/canadiens-wild-2024-11-14-game-preview-start-time-tale-of-the-tape-and-how-to-watch-tv-listings/">Article 3</a></div>
-            <div class="article"><a href="https://www.habseyesontheprize.com/canadiens-wild-2024-11-14-game-preview-start-time-tale-of-the-tape-and-how-to-watch-tv-listings/">Article 4</a></div>
+            <ul>
+                <li><a href="https://thehockeynews.com/nhl/montreal-canadiens/latest-news/canadiens-ready-for-big-test">Article 1</a></li>
+                <li><a href="https://www.sportsnet.ca/nhl/article/canadiens-slump-busting-win-over-sabres-delivered-by-teams-top-players/">Article 2</a></li>
+                <li><a href="https://www.habseyesontheprize.com/canadiens-wild-2024-11-14-game-preview-start-time-tale-of-the-tape-and-how-to-watch-tv-listings/">Article 3</a></li>
+                <li><a href="https://www.habseyesontheprize.com/canadiens-wild-2024-11-14-game-preview-start-time-tale-of-the-tape-and-how-to-watch-tv-listings/">Article 4</a></li>
+            </ul>
         </div>
         <div class="related-image">
             <img src="assets/images/bench.jpg" alt="bench">
         </div>
     </section>
-
   
     <section class="standings">
         <h3>Standings</h3>
@@ -60,23 +61,18 @@
         </iframe>
     </section>
 
-    <!-- upcoming Schedule Section -->
-    <section class="schedule">
-        <h3>Upcoming Schedule</h3>
-        <div class="calendar">
-        <!-- calendar here -->
-        </div>
-    </section>
-
     <!-- FanZone Section -->
     <section class="fan-zone">
         <h3>The FanZone</h3>
         <p>We encourage our fans to discuss and debate about our favourite team!</p>
         <div id="comments-section">
-        <!-- user comments will go here -->
+            <!-- User comments will go here -->
         </div>
-        <textarea id="comment-input" placeholder="Write a message..."></textarea>
-        <button>Post Comment</button>
+        <form id="comment-form">
+            <textarea id="comment-input" placeholder="Write a message..." required></textarea>
+            <input type="text" id="username" placeholder="Username" required>
+            <button type="submit">Post Comment</button>
+        </form>
     </section>
     <footer>
         <div class="footer">

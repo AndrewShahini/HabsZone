@@ -24,7 +24,7 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <div class="contact-container">
-            <form id="contact-form">
+            <form id="contact-form" onsubmit="return submitForm(event)">
                 <label for="name">Name:</label>
                 <input type="text" id="name" required>
         
@@ -34,7 +34,7 @@
                 <label for="message">Message:</label>
                 <input type="text" id="message" required>
         
-                <button type="submit" class="contactBtn">Submit</button>
+                <button submit="submit" class="contactBtn" onclick="submitForm()">Submit</button>
             </form>
             <img src="assets/images/mail.jpg" alt="mail" class="contact-image">
         </div>
