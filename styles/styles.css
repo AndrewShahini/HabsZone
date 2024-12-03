@@ -256,17 +256,21 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 20px;
+  justify-content: center;
 }
 .defense-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 20px;
+  justify-content: center;
 }
 .goalie-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .foward, .goalie{
@@ -293,13 +297,13 @@ h3 {
   overflow: hidden;
   text-align: center;
   border: 2px solid #ddd;
+  margin-left: 10%;
 }
 
 .player-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px; 
   border: 2px solid #ddd;
 }
 
@@ -315,6 +319,14 @@ h3 {
   font-weight: bold;
   text-align: center;
   font-size: 14px;
+}
+
+.goalie .player-card {
+  position: relative;
+  width: 60%; 
+  overflow: hidden;
+  text-align: center;
+  border: 2px solid #ddd;
 }
 
 /*Contact Page*/
