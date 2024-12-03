@@ -73,6 +73,12 @@ nav {
 /* Home 
 Recent News
 */
+
+#recent-container {
+  display: flex;
+  justify-content: center;
+}
+
 .recent-news {
   font-family: Arial, sans-serif;
   margin: 20px;
@@ -82,10 +88,8 @@ Recent News
   border-radius: 8px;
   max-width: 600px;
   width: 100%;
-  margin-left: 50vh;
 }
 
-/* Styling the title */
 .recent-news h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
@@ -93,14 +97,12 @@ Recent News
   text-align: center;
 }
 
-/* Styling the unordered list */
 .recent-news ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Styling each list item */
 .recent-news ul li {
   margin: 10px 0;
   padding: 10px;
@@ -111,26 +113,22 @@ Recent News
   text-align: center;
 }
 
-/* Add hover effect for list items */
 .recent-news ul li:hover {
   background-color: #f0f0f0;
   transform: translateY(-2px);
 }
 
-/* Styling the article links */
 .recent-news ul li a {
   text-decoration: none;
   color: #007bff;
   font-weight: bold;
 }
 
-/* Add hover effect for the links */
 .recent-news ul li a:hover {
   text-decoration: underline;
   color: #0056b3;
 }
 
-/* Styling the related image */
 .related-image {
   margin-top: 20px;
   text-align: center;
@@ -146,7 +144,7 @@ Recent News
 .ui-dialog {
   border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: visible; /* Ensure content inside is not cut off */
+  overflow: visible; 
 }
 
 .ui-dialog-titlebar {
@@ -157,7 +155,7 @@ Recent News
 }
 
 .ui-dialog-titlebar-close {
-  position: absolute; /* Ensure it is positioned within the title bar */
+  position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
@@ -169,7 +167,7 @@ Recent News
 }
 
 .ui-dialog-titlebar-close:hover {
-  background-color: #f44336; /* Change hover color */
+  background-color: #f44336;
   color: white;
 }
 
@@ -186,7 +184,6 @@ Recent News
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Standings and team entries */
 .standings {
   padding: 20px;
 }
@@ -198,6 +195,8 @@ Recent News
 
 .division {
   margin: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .standing-division {
@@ -224,13 +223,13 @@ Recent News
 .team img {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* Circle border */
+  border-radius: 50%;
   margin-right: 10px;
 }
 
 #standingsDialog {
   display: none;
-  width: 90%; /* Use percentage for better responsiveness */
+  width: 90%;
   max-width: 1000px;
 }
 
@@ -248,22 +247,6 @@ Recent News
   width: 100%;
   height: 600px;
   border: none;
-}
-
-/* Schedule */
-.schedule {
-  padding: 20px;
-}
-
-.schedule h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.calendar {
-  background-color: #dee2e6;
-  padding: 20px;
-  text-align: center;
 }
 
 /* FanZone */
@@ -353,6 +336,7 @@ h3 {
   gap: 20px;
   justify-content: center;
 }
+
 .defense-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
@@ -362,7 +346,7 @@ h3 {
 }
 .goalie-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
@@ -387,12 +371,14 @@ h3 {
 }
 
 .player-card {
+  display: flex;
   position: relative;
   width: 80%; 
   overflow: hidden;
   text-align: center;
   border: 2px solid #ddd;
-  margin-left: 5vh;
+  align-content: center;
+  justify-content: center;
 }
 
 .player-photo {

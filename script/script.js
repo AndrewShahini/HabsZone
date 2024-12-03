@@ -75,13 +75,11 @@ function submitForm(event) {
 
 
 $(document).ready(function () {
-    // Sample data to simulate a backend
     var comments = [];
 
-    // Function to display comments
     function displayComments() {
         const commentSection = $('#comments-section');
-        commentSection.empty(); // Clear existing comments
+        commentSection.empty();
 
         comments.forEach(function (comment) {
             const commentHtml = `
@@ -93,34 +91,27 @@ $(document).ready(function () {
         });
     }
 
-    // Event listener for submitting the form
     $('#comment-form').on('submit', function (e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
 
         const username = $('#username').val().trim();
         const message = $('#comment-input').val().trim();
 
         if (username && message) {
-            // Simulate AJAX request (you can replace it with actual AJAX to backend)
             setTimeout(function () {
-                // Add comment to the comments array
                 comments.push({ username: username, message: message });
 
-                // Clear the input fields
                 $('#username').val('');
                 $('#comment-input').val('');
 
-                // Display updated comments
                 displayComments();
 
-                // Optional: alert user that comment was posted
                 alert('Your comment has been posted!');
-            }, 500); // Simulate server response time (500ms)
+            }, 500); 
         } else {
             alert('Please enter both username and message.');
         }
     });
 
-    // Initial call to display any existing comments
     displayComments();
 });
