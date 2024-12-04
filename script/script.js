@@ -18,7 +18,7 @@ $(document).ready(function () {
                 throw new Error("No standings data found");
             }
 
-            const standingsHtml = teams.map((team, index) => {
+            const standingsHtml = teams.map((team) => {
                 const { teamLogo, teamAbbrev, divisionSequence, wins, losses, otLosses, points, teamName } = team;
                 const logo = teamLogo || "default-logo.png"; 
                 const position = divisionSequence || "N/A";
@@ -75,7 +75,7 @@ function submitForm(event) {
 
 
 $(document).ready(function () {
-    var comments = [];
+    var comments = JSON.parse(localStorage.getItem('comments')) || [];
 
     function displayComments() {
         const commentSection = $('#comments-section');
@@ -91,27 +91,42 @@ $(document).ready(function () {
         });
     }
 
-    $('#comment-form').on('submit', function (e) {
+    function saveCommentsToLocalStorage() {
+        localStorage.setItem('comments', JSON.stringify(comments));
+    }
+
+    function fetchComments() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(comments);
+            }, 500);
+        });
+    }
+
+    $('#comment-form').on('submit', async function (e) {
         e.preventDefault();
 
         const username = $('#username').val().trim();
         const message = $('#comment-input').val().trim();
 
         if (username && message) {
-            setTimeout(function () {
+            setTimeout(() => {
                 comments.push({ username: username, message: message });
+                saveCommentsToLocalStorage();
+                displayComments(); 
 
                 $('#username').val('');
                 $('#comment-input').val('');
 
-                displayComments();
-
                 alert('Your comment has been posted!');
-            }, 500); 
+            }, 500);
         } else {
             alert('Please enter both username and message.');
         }
     });
 
-    displayComments();
+    (async function initializeComments() {
+        comments = await fetchComments(); 
+        displayComments(); 
+    })();
 });

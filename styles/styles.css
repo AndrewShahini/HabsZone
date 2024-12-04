@@ -141,49 +141,6 @@ Recent News
 }
 
 /* Standings */
-.ui-dialog {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: visible; 
-}
-
-.ui-dialog-titlebar {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  position: relative;
-}
-
-.ui-dialog-titlebar-close {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  background: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.ui-dialog-titlebar-close:hover {
-  background-color: #f44336;
-  color: white;
-}
-
-.ui-dialog-title {
-  font-size: 18px;
-}
-
-.ui-dialog-content {
-  padding: 20px;
-  overflow: auto;
-}
-
-.ui-widget-overlay {
-  background: rgba(0, 0, 0, 0.5);
-}
-
 .standings {
   padding: 20px;
 }
@@ -193,10 +150,13 @@ Recent News
   margin-bottom: 15px;
 }
 
-.division {
-  margin: 10px;
+#divisions {
   display: flex;
   justify-content: center;
+}
+
+#divisions button{
+  margin-left: 5px;
 }
 
 .standing-division {
@@ -230,7 +190,7 @@ Recent News
 #standingsDialog {
   display: none;
   width: 90%;
-  max-width: 1000px;
+  max-width: 100%;
 }
 
 /* Recent Highlights */
@@ -379,6 +339,7 @@ h3 {
   border: 2px solid #ddd;
   align-content: center;
   justify-content: center;
+  margin-left: 8%;
 }
 
 .player-photo {
@@ -408,6 +369,7 @@ h3 {
   overflow: hidden;
   text-align: center;
   border: 2px solid #ddd;
+  margin-left: 20%;
 }
 
 /*Contact Page*/
@@ -463,11 +425,6 @@ h3 {
   background-color: #a12930;
 }
 
-.contact-image {
-  width: 300px;
-  height: auto;
-  padding-left: 20px;
-}
 
 /*
 Footers
