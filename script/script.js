@@ -1,3 +1,4 @@
+//Standings
 $(document).ready(function () {
 
     async function fetchStandings(division) {
@@ -20,8 +21,8 @@ $(document).ready(function () {
 
             const standingsHtml = teams.map((team) => {
                 const { teamLogo, teamAbbrev, divisionSequence, wins, losses, otLosses, points, teamName } = team;
-                const logo = teamLogo || "default-logo.png"; 
-                const position = divisionSequence || "N/A";
+                const logo = teamLogo 
+                const position = divisionSequence;
 
                 return `
                     <div class="team">
@@ -53,6 +54,7 @@ $(document).ready(function () {
     });
 });
 
+//Contact Us
 function submitForm(event) {
     event.preventDefault();
 
@@ -73,7 +75,7 @@ function submitForm(event) {
     document.getElementById("contact-form").reset();
 }
 
-
+//Fanzone
 $(document).ready(function () {
     var comments = JSON.parse(localStorage.getItem('comments')) || [];
 
