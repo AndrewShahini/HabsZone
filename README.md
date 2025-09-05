@@ -2,7 +2,7 @@
 ## Project Description
 
 ### The Idea 
-The website will be a fan-oriented Montreal Canadiens information hub called “HabsZone”. It will focus on making our fans up-to-date team information, stats, schedules, and interactive elements, such as stats and standing. Users can browse team rosters, see game schedules, view highlights, and communicate with other fans about any topic relating to the Montreal Canadiens. 
+The website will be a fan-oriented Montreal Canadiens information hub called “HabsZone”. It will focus on making our fans up-to-date team information and interactive elements, such as stats the standings. Users can browse team rosters, view highlights, and communicate with other fans about any topic relating to the Montreal Canadiens. 
 
 ### Chosen Font 
 Roboto for headers and while body text can use Arial for clarity.
